@@ -4,6 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { LayoutGrid, Film, MonitorPlay, Bookmark } from "lucide-react"
 import { Button } from "@/components/ui/button";
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname, useSearchParams } from "next/navigation"
 
 interface SidebarProps {
@@ -18,7 +19,7 @@ export default function Navbar({ className, variant, onButtonClick }: SidebarPro
     const pathname = usePathname()
     const searchParams = useSearchParams()
 
-    const currentType = searchParams.get('movie-type')
+    const currentType = searchParams.get('movie-category')
     
     return (
         <div className={`${navbarOrientation} ${className}`}>
@@ -27,19 +28,25 @@ export default function Navbar({ className, variant, onButtonClick }: SidebarPro
             <div className={`border border-solid border-[#161D27] rounded-lg bg-[#161D27] flex flex-col 
                 items-center justify-between py-4 w-[4rem] min-h-screen absolute`}>
                 <aside className={`flex gap-4 flex-col items-center`}>
-                    <p className={`mb-10`}>Logo</p>
+                    <Image
+                        src="/assets/logo.svg"
+                        width={32}
+                        height={25.6}
+                        alt="Movies app logo"
+                        className="m-auto mb-12 pb-8"
+                        />
                     <div className={`flex flex-col gap-4`}>
-                        <Link href="/movies" className={`mx-auto cursor-pointer group`}>
+                        <Link href="/" className={`mx-auto cursor-pointer group`}>
                             <LayoutGrid className={`!w-[25px] !h-[25px] text-[#5A698F] group-hover:text-red-500 
-                                ${pathname==="/movies" && !currentType ? "text-white" : ""}`}/>
+                                ${pathname==="/" && !currentType ? "text-white" : ""}`}/>
                         </Link>
                         <Button variant="ghost" onClick={() => onButtonClick("Movie")} className="cursor-pointer group">
                             <Film className={`!w-[25px] !h-[25px] text-[#5A698F] group-hover:text-red-500 
-                                ${pathname==="/movies" && currentType === 'Movie' ? "text-white" : ""}`}/>
+                                ${pathname==="/" && currentType === 'Movie' ? "text-white" : ""}`}/>
                         </Button>
                         <Button variant="ghost" onClick={() => onButtonClick("TV Series")} className="cursor-pointer group">
                             <MonitorPlay className={`!w-[25px] !h-[25px] text-[#5A698F] group-hover:text-red-500 
-                                ${pathname==="/movies" && currentType === 'TV Series' ? "text-white" : ""}`}/>
+                                ${pathname==="/" && currentType === 'TV Series' ? "text-white" : ""}`}/>
                         </Button>
                         <Link href="/bookmarks" className={`mx-auto cursor-pointer group`}>
                             <Bookmark className={`!w-[25px] !h-[25px] text-[#5A698F] group-hover:text-red-500 
@@ -60,20 +67,26 @@ export default function Navbar({ className, variant, onButtonClick }: SidebarPro
             <div className="block lg:hidden">
             <div className={`border border-solid border-white rounded-lg bg-[#161D27] 
                 flex gap-2 sm:gap-4 md:gap-4 items-center justify-between 
-                py-4 h-[4rem]  w-[95%] mb-10 px-4`}>
-                <p className={``}>Logo</p>
+                p-4 h-[4rem]  w-[95%] mb-4`}>
+                <Image
+                    src="/assets/logo.svg"
+                    width={32}
+                    height={25.6}
+                    alt="Movies app logo"
+                    className="my-auto mb-12 pb-8"
+                    />
                 <div className={`flex gap-1 sm:gap-2 md:gap-4`}>
-                    <Link href="/movies" className={`my-auto cursor-pointer group`}>
+                    <Link href="/" className={`my-auto cursor-pointer group`}>
                         <LayoutGrid className={`!w-[25px] !h-[25px] text-[#5A698F] group-hover:text-red-500 
-                            ${pathname==="/movies" && !currentType ? "text-white" : ""}`}/>
+                            ${pathname==="/" && !currentType ? "text-white" : ""}`}/>
                     </Link>
                     <Button variant="ghost" onClick={() => onButtonClick("Movie")} className="cursor-pointer group">
                         <Film className={`!w-[25px] !h-[25px] text-[#5A698F] group-hover:text-red-500 
-                                ${pathname==="/movies" && currentType === 'Movie' ? "text-white" : ""}`}/>
+                                ${pathname==="/" && currentType === 'Movie' ? "text-white" : ""}`}/>
                     </Button>
                     <Button variant="ghost" onClick={() => onButtonClick("TV Series")} className="cursor-pointer group">
                         <MonitorPlay className={`!w-[25px] !h-[25px] text-[#5A698F] group-hover:text-red-500 
-                                ${pathname==="/movies" && currentType === 'TV Series' ? "text-white" : ""}`}/>
+                                ${pathname==="/" && currentType === 'TV Series' ? "text-white" : ""}`}/>
                     </Button>
                     <Link href="/bookmarks" className={`my-auto cursor-pointer group`}>
                         <Bookmark className={`!w-[25px] !h-[25px] text-[#5A698F] group-hover:text-red-500 

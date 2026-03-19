@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
 export default function useBookmarks() {
-    const [ids, setIds] = useState<string[]>([]);
+    // Initialize state lazily (only runs once on mount)
+    const [ids, setIds] = useState<string[]>(() => {
+        const data = localStorage.getItem("bookmarked-movies")
+        return data ? JSON.parse(data) : []
+});
 
-    useEffect(() => {
-        const data = localStorage.getItem("bookmarked-movies");
-        if (data) setIds(JSON.parse(data));
-    }, []);
-
+    // Updates localStorage when ids actually changes
     useEffect(() => {
         localStorage.setItem("bookmarked-movies", JSON.stringify(ids));
     }, [ids]);

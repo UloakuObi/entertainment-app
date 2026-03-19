@@ -51,7 +51,7 @@ export default function MovieCard({id, isBookmarked, onButtonClick, thumbnail, y
             <Dot style={{strokeWidth:"2px", width:"20px"}} className="text-white opacity-70"/>
             <p className={`${fontSize} text-white opacity-70`}>{rating}</p>
       </CardDescription>
-      <CardTitle className={`font-bold text-white text-xl ${cardTitle}`}>
+      <CardTitle className={`font-medium text-white text-xl ${cardTitle}`}>
         {title}
       </CardTitle>
 
