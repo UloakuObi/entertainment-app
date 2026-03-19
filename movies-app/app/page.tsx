@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import Image from "next/image";
 import movies from "@/data.json"
 import Navbar from "./_components/Navbar";
+import SearchBar from "./_components/SearchBar";
 import MovieCard from "./_components/MovieCard";
 import useBookmarks from "@/hooks/useBookmarks";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
@@ -48,7 +49,7 @@ export default function Home() {
     <div className="m-4 w-screen relative">
       {/* <Navbar variant="mobile" onButtonClick={handleFilter}/>
       <Navbar variant="desktop" onButtonClick={handleFilter}/> */}
-
+      <SearchBar/>
       <h1 className="text-4xl font-light mb-6">Trending</h1>
       
       <div className="flex gap-7 overflow-x-auto">
