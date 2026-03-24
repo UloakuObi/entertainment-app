@@ -13,7 +13,7 @@ export default function useBookmarks() {
 
     const [movies, setMovies] = useState<moviesData[]>([]);
 
-    // ✅ Load from localStorage ONLY on client after mount
+    // Load from localStorage ONLY on client after mount
     useEffect(() => {
         const data = localStorage.getItem("bookmarked-movies");
         if (data) {
