@@ -9,20 +9,8 @@ import {
 } from "@/components/ui/card"
 import { Dot, Bookmark, Film, MonitorPlay } from 'lucide-react'
 
-type MovieCardProps = {
-    id: string;
-    isBookmarked?: boolean;
-    onButtonClick: (id: string) => void;
-    thumbnail: string;
-    year: Number;
-    movieType: string;
-    rating: string;
-    title: string;
-    variant?: string;
-    className?: string;
-}
-
-export default function MovieCard({id, isBookmarked, onButtonClick, thumbnail, year, movieType, rating, variant, title, className}: MovieCardProps) {
+export default function MovieCard({movie, id, isBookmarked, onButtonClick, thumbnail, 
+    year, movieType, rating, variant, title, className}: MovieCardProps) {
   
     const movieIcon = movieType === "Movie" ? <Film className="text-white opacity-70"/> : <MonitorPlay className="text-white opacity-70"/>
     const imgSize = variant === "long" ? "h-[210px]" : ""
@@ -56,9 +44,11 @@ export default function MovieCard({id, isBookmarked, onButtonClick, thumbnail, y
       </CardTitle>
 
       <CardAction className="absolute top-3 right-3 z-35">
-        <Button onClick={() => onButtonClick(id)}
-            className="rounded-full w-[40px] h-[40px] bg-[#10141E]/50 cursor-pointer group">
-            <Bookmark className={`!w-[20px] !h-[20px] text-white transition-colors 
+        <Button onClick={(e) => {
+          e.stopPropagation() 
+          onButtonClick(e, movie)}}
+            className="rounded-full w-10 h-10 bg-[#10141E]/50 cursor-pointer group">
+            <Bookmark className={`w-5! h-5! text-white transition-colors 
                       group-hover:text-red-50 group-hover:fill-red-50 ${isBookmarked ? "fill-white" : ""}`}/>
         </Button>
       </CardAction>

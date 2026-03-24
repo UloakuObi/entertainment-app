@@ -4,27 +4,6 @@ import { Search } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import type FormEvent from 'react'
 import { useRouter, usePathname } from "next/navigation";
-// import getMovieDetails from '@/lib/getMovieDetails'
-// import MovieCard from './MovieCard'
-// import { Star, Dot } from 'lucide-react'
-
-// type MovieData = {
-//     Title:string; 
-//     Year: string;
-//     imdbID: string;
-//     Type: string; 
-//     Poster: string;
-// }
-
-// type MovieDetails = MovieData & {
-//     Plot?: string;
-//     Runtime?: string;
-//     imdbRating?: string;
-//     Poster?: string;
-//     Director?: string;
-//     Actors?: string;
-//     Genre?: string;
-// }
 
 export default function SearchBar() {
     const [inputValue, setInputValue] = useState<string>("")

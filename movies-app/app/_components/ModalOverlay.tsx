@@ -2,25 +2,6 @@ import Image from "next/image"
 import { Star } from "lucide-react";
 import { Dot } from "lucide-react";
 
-interface MovieDetails {
-    Title:string; 
-    Year: string;
-    imdbID: string;
-    Type: string; 
-    Poster: string;
-    Plot?: string;
-    Runtime?: string;
-    imdbRating?: string;
-    Director?: string;
-    Actors?: string;
-    Genre?: string;
-}
-
-interface ModalOverlayProps {
-    selectedMovie: MovieDetails;
-    setSelectedMovie: React.Dispatch<React.SetStateAction<MovieDetails | null>> 
-}
-
 export default function ModalOverlay({ selectedMovie, setSelectedMovie } : ModalOverlayProps) {
     return (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center 
