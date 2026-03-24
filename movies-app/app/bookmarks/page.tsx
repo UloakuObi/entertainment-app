@@ -1,4 +1,7 @@
 "use client"
+
+export const dynamic = 'force-dynamic'; // Prevent prerendering
+
 import movies from "@/data1.json"
 import { useState, useEffect } from "react"
 import Navbar from "../_components/Navbar"
@@ -10,18 +13,16 @@ export default function BookmarksPage() {
 
     const [bookmarks, setBookmarks] = useBookmarks();
     const [moviesData, setMoviesData] = useState(movies["movies"]);
-    
-    // 1. Add a mounted state to prevent pre-render errors
+
     const [hasMounted, setHasMounted] = useState(false);
 
-    // 2. Set mounted to true after the first render
     useEffect(() => {
         setHasMounted(true);
     }, []);
 
-    // 3. Don't render the bookmarks until we are in the browser
+    // This prevents the server from ever trying to read 'bookmarks'
     if (!hasMounted) {
-        return null; 
+        return <div className="m-4">Loading bookmarks...</div>; 
     }
 
     const toggleBookmark = (e:MouseEvent<HTMLButtonElement | HTMLDivElement>, movie: moviesData) => {
