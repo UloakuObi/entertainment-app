@@ -10,7 +10,7 @@ export default function BookmarksPage() {
 
     const [bookmarks, setBookmarks] = useBookmarks();
     const [moviesData, setMoviesData] = useState(movies["movies"]);
-
+    
     // 1. Add a mounted state to prevent pre-render errors
     const [hasMounted, setHasMounted] = useState(false);
 
