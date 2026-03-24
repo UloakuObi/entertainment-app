@@ -12,12 +12,17 @@ import { MouseEvent } from "react";
 export default function BookmarksPage() {
 
     const [bookmarks, setBookmarks] = useBookmarks();
-    const [moviesData, setMoviesData] = useState(movies["movies"]);
-
+    //const [moviesData, setMoviesData] = useState(movies["movies"]);
+    const [moviesData, setMoviesData] = useState<moviesData[]>([]);
     const [hasMounted, setHasMounted] = useState(false);
 
     useEffect(() => {
         setHasMounted(true);
+
+        //Lazy load JSON ONLY on client
+        import("@/data1.json").then((data) => {
+            setMoviesData(data.movies);
+        });
     }, []);
 
     // This prevents the server from ever trying to read 'bookmarks'
