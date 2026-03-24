@@ -24,7 +24,7 @@ export default function SearchBar() {
     }
   
     return (
-        <div className="flex gap-3 items-center border border-solid border-gray-50/20 py-1 w-[95%]">
+        <div className="flex gap-3 items-center py-1 w-[95%]">
             <Search />
             <form onSubmit={handlesubmit} className='w-full'>
             <input type='text' 

@@ -11,21 +11,6 @@ export default function BookmarksPage() {
     const [bookmarks, setBookmarks] = useBookmarks();
     const [moviesData, setMoviesData] = useState(movies["movies"]);
 
-    // const toggleBookmark = (movie: moviesData) => {
-    //     setBookmarks(prev => {
-    //         const exists = prev.find(m => m.id === movie.id)
-
-    //         if (exists) {
-    //             return prev.filter(m => m.id !== movie.id)
-    //         }
-
-    //         return [...prev, {
-    //         ...movie
-    //     }]
-    //     })
-
-    // }
-
     const toggleBookmark = (e:MouseEvent<HTMLButtonElement | HTMLDivElement>, movie: moviesData) => {
           e.stopPropagation()
           console.log("What is this movie object?", movie);
