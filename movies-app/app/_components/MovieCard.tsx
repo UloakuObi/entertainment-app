@@ -33,7 +33,7 @@ export default function MovieCard({id, isBookmarked, onButtonClick, thumbnail, y
     // h-[110px] sm:h-[180px] md:h-[210px]
 
     return (
-    <Card className={`pt-0 relative rounded-b-[0] bg-[#10141E] ${cardSize} ${className}`}>
+    <Card className={`pt-0 relative rounded-b-none bg-[#10141E] ${cardSize} ${className}`}>
       {/* <div className="absolute inset-0 z-30 aspect-video bg-black/35" /> */}
       <img
         src={thumbnail}

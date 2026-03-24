@@ -1,5 +1,5 @@
 "use client"
-import movies from "@/data.json"
+import movies from "@/data1.json"
 import { useState, useEffect } from "react"
 import Navbar from "../_components/Navbar"
 import MovieCard from "../_components/MovieCard"
@@ -21,7 +21,7 @@ export default function BookmarksPage() {
     const [moviesData, setMoviesData] = useState(movies["movies"]);
 
     // Filter the full list to only show what the user picked
-    const bookmarkedMovies = moviesData.filter(movie => savedIds.includes(movie.title))
+    const bookmarkedMovies = moviesData.filter(movie => savedIds.includes(movie.id))
 
     // This function handles the logic when a movieCard is clicked
     const handleBookmarkClick = (id: string) => {
@@ -51,15 +51,15 @@ export default function BookmarksPage() {
                 <div className="flex gap-y-2 gap-x-5 sm:gap-x-6 flex-wrap mr-4">
                     {bookmarkedMovies.map(movie => {
                         return <MovieCard
-                                key={movie.title}
-                                id={movie.title}
+                                key={movie.id}
+                                id={movie.id}
                                 thumbnail={movie.thumbnail.regular!.small}
                                 year={movie.year}
                                 movieType={movie.category}
                                 rating={movie.rating}
                                 title={movie.title}
                                 // className="grow-1 h-fit"
-                                isBookmarked={savedIds.includes(movie.title)}
+                                isBookmarked={savedIds.includes(movie.id)}
                                 onButtonClick={handleBookmarkClick} // Passing the function
                                 />
                     })}
