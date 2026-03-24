@@ -1,6 +1,7 @@
 "use client"
 
 export const dynamic = 'force-dynamic'; // Prevent prerendering
+export const prerender = false;
 
 import movies from "@/data1.json"
 import { useState, useEffect } from "react"
