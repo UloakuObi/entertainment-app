@@ -11,6 +11,19 @@ export default function BookmarksPage() {
     const [bookmarks, setBookmarks] = useBookmarks();
     const [moviesData, setMoviesData] = useState(movies["movies"]);
 
+    // 1. Add a mounted state to prevent pre-render errors
+    const [hasMounted, setHasMounted] = useState(false);
+
+    // 2. Set mounted to true after the first render
+    useEffect(() => {
+        setHasMounted(true);
+    }, []);
+
+    // 3. Don't render the bookmarks until we are in the browser
+    if (!hasMounted) {
+        return null; 
+    }
+
     const toggleBookmark = (e:MouseEvent<HTMLButtonElement | HTMLDivElement>, movie: moviesData) => {
           e.stopPropagation()
           console.log("What is this movie object?", movie);
