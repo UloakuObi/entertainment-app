@@ -1,123 +1,151 @@
-# Frontend Mentor - Entertainment web app
+# Entertainment web app
 
 ![Design preview for the Entertainment web app coding challenge](./preview.jpg)
 
-## Welcome! 👋
+## Overview
+This is a **frontend web application** for browsing, searching, and bookmarking movies. Built with Next.js and powered by the OMDb API for real-time movie search and detailed movie information.
 
-Thanks for purchasing this premium Frontend Mentor coding challenge.
+Users can browse a curated collection of movies, search for any movie via the OMDb API, view detailed movie information in a modal overlay, and save their favorites to a persistent bookmarks list using `localStorage`.
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects. These premium challenges are perfect portfolio pieces, so please feel free to use what you create in your portfolio to show others.
-
-**To do this challenge, you need a strong understanding of HTML, CSS, and JavaScript.**
-
-## The challenge
-
-Your challenge is to build out this entertainment web application and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-We provide the data in a local `data.json` file, so use that to populate the content on the first load. If you want to take it up a notch, feel free to build this as a full-stack application!
-
-Your users should be able to:
-
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Navigate between Home, Movies, TV Series, and Bookmarked Shows pages
-- Add/Remove bookmarks from all movies and TV series
-- Search for relevant shows on all pages
-- **Bonus**: Build this project as a full-stack application
-- **Bonus**: If you're building a full-stack app, we provide authentication screen (sign-up/login) designs if you'd like to create an auth flow
-
-### Expected Behaviour
-
-- General
-  - The navigation menu should be fixed to the left for larger screens. Use the "Desktop - Home" page in the design as a visual reference.
-- Home
-  - The trending section should scroll sideways to reveal other trending shows
-  - Any search input should search through all shows (i.e. all movies and TV series)
-- Movies
-  - This page should only display shows with the "Movie" category
-  - Any search input should search through all movies
-- TV Series
-  - This page should only display shows with the "TV Series" category
-  - Any search input should search through all TV series
-- Bookmarked Shows
-  - This page should display all bookmarked shows from both categories
-  - Any search input should search through all bookmarked shows
-
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
-
-## Where to find everything
-
-Your task is to build out the project to the design file provided. You can download the Figma design file on the platform. **Please be sure not to share it with anyone else.** The design download comes with a `README.md` file as well to help you get set up.
-
-All the required assets for this project are in the `/assets` folder. The assets are already exported for the correct screen size and optimized. Some images are reusable at multiple screen sizes. So if you don't see an image in a specific folder, it will typically be in another folder for that page.
-
-The design system in the design file will give you more information about the various colors, fonts, and styles used in this project. Our fonts always come from [Google Fonts](https://fonts.google.com/).
-
-## Using AI coding assistants
-
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
-
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
-
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
-
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
-
-## Building your project
-
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
-
-1. Separate the `starter-code` from the rest of this project and rename it to something meaningful for you. Initialize the codebase as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/). **⚠️ IMPORTANT ⚠️: There are already a couple of `.gitignore` files in this project. Please do not remove them or change the content of the files. If you create a brand new project, please use the `.gitignore` files provided in your new codebase. This is to avoid the accidental upload of the Figma design file to GitHub. With these premium challenges, please be sure not to share the Figma design file in your GitHub repo. Thanks!**
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
-
-## Deploying your project
-
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
-
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
-
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
-
-## Create a custom `README.md`
-
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
-
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
-
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
-
-## Submitting your solution
-
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-**⚠️ IMPORTANT ⚠️: With these premium challenges, please be sure not to upload the Figma design file to GitHub when you're submitting to the platform and sharing it around. If you've created a brand new project, the easiest way to do that is to copy across the `.gitignore` provided in this starter project.**
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community).
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback.
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi@frontendmentor.io.
-
-**Have fun building!** 🚀
+## Project Type
+**Frontend Web Application** — Client-rendered Next.js app with server-side API routes acting as a proxy to the OMDb external API.
+---
+## What the App Does
+- **Browse Movies** — View a curated catalog of movies organized into "Trending" and "Recommended" sections.
+- **Filter by Category** — Filter movies by category (e.g., Movie, TV Series) via the navigation bar, with filter state reflected in URL query parameters.
+- **Search Movies** — Search for any movie by title. The app queries the OMDb API in real time and displays normalized results.
+- **View Movie Details** — Click on a search result to fetch and display detailed movie information (plot, cast, ratings, etc.) in a modal overlay.
+- **Bookmark Movies** — Toggle bookmarks on any movie card. Bookmarks persist across sessions via `localStorage`.
+- **Dedicated Bookmarks Page** — View all saved bookmarks in one place at `/bookmarks`.
+- **Responsive Design** — Fully responsive layout with mobile and desktop navigation variants.
+---
+## Tech Stack
+| Layer        | Technology                          |
+|-------------|--------------------------------------|
+| Framework   | [Next.js 16+](https://nextjs.org/) (App Router) |
+| Language    | TypeScript                           |
+| Styling     | Tailwind CSS                         |
+| State       | React `useState` / `useEffect`       |
+| Persistence | `localStorage` (via custom hook)     |
+| External API| [OMDb API](http://www.omdbapi.com/)  |
+| Routing     | Next.js App Router + `useSearchParams` |
+| Deployment  | Vercel (recommended)                 |
+---
+## Project Structure
+```
+├── app/
+│   ├── page.tsx                        # Home page (Trending, Recommended, Search)
+│   ├── bookmarks/
+│   │   └── page.tsx                    # Bookmarks page
+│   ├── _components/
+│   │   ├── Navbar.tsx                  # Navigation (mobile + desktop variants)
+│   │   ├── SearchBar.tsx               # Search input component
+│   │   ├── Trending.tsx                # Trending movies section
+│   │   ├── Recommended.tsx             # Recommended movies section
+│   │   ├── SearchResults.tsx           # Search results grid
+│   │   ├── MovieCard.tsx               # Individual movie card
+│   │   └── ModalOverlay.tsx            # Movie details modal
+│   └── api/
+│       └── movies/
+│           ├── route.ts                # GET /api/movies?title=<query> (search proxy)
+│           └── movie-details/
+│               └── route.ts            # GET /api/movies/movie-details?movie-id=<id> (details proxy)
+├── hooks/
+│   └── useBookmarks.ts                # Custom hook for bookmark state + localStorage sync
+├── lib/
+│   ├── getMovies.ts                   # Client-side fetch helper for movie search
+│   └── getMovieDetails.ts            # Client-side fetch helper for movie details
+├── data1.json                         # Curated local movie dataset
+├── .env.local                         # Environment variables (API key)
+└── README.md
+```
+---
+## Features Implemented
+- [x] Curated movie catalog from local JSON data
+- [x] Trending and Recommended sections on the home page
+- [x] Category-based filtering with URL query parameter persistence
+- [x] Real-time movie search via OMDb API
+- [x] API route proxy to keep the OMDb API key server-side
+- [x] Movie detail modal with extended information (fetched by IMDb ID)
+- [x] Bookmark toggling on any movie card
+- [x] Persistent bookmarks via `localStorage` (custom `useBookmarks` hook)
+- [x] Dedicated `/bookmarks` page
+- [x] Responsive design with separate mobile and desktop navigation
+- [x] Normalized data model between local JSON and OMDb API responses
+---
+## Development Setup
+### Prerequisites
+- **Node.js** ≥ 18.x
+- **npm**, **yarn**, or **pnpm**
+- An **OMDb API key** — get one free at [omdbapi.com/apikey.aspx](http://www.omdbapi.com/apikey.aspx)
+### 1. Clone the Repository
+```bash
+git clone https://github.com/UloakuObi/entertainment-app.git
+cd entertainment-app
+```
+### 2. Install Dependencies
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+### 3. Configure Environment Variables
+Create a `.env.local` file in the project root:
+```env
+OMDB_API_KEY=your_omdb_api_key_here
+```
+> **Do not commit this file.** It is (and should be) listed in `.gitignore`.
+### 4. Verify Local Data
+Ensure `data1.json` exists in the project root with the following structure:
+```json
+{
+  "movies": [
+    {
+      "id": "unique-id",
+      "title": "Movie Title",
+      "thumbnail": {
+        "trending": { "small": "url", "large": "url" },
+        "regular": { "small": "url", "medium": "url", "large": "url" }
+      },
+      "year": 2024,
+      "category": "Movie",
+      "rating": "PG",
+      "isBookmarked": false,
+      "isTrending": true
+    }
+  ]
+}
+```
+---
+## How to Run
+### Development
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+### Production Build
+```bash
+npm run build
+npm run start
+```
+### Linting
+```bash
+npm run lint
+```
+---
+## 🌐 Deployment
+This app is optimized for deployment on **[Vercel](https://vercel.com/)**:
+1. Push your repository to GitHub/GitLab/Bitbucket.
+2. Import the project into Vercel.
+3. Add the `OMDB_API_KEY` environment variable in Vercel's project settings under **Settings → Environment Variables**.
+4. Deploy — Vercel will automatically detect the Next.js framework and configure the build.
+For other platforms (Netlify, Railway, Docker, etc.), ensure:
+- The `OMDB_API_KEY` environment variable is set in the hosting environment.
+- The platform supports Next.js API routes (serverless functions or a Node.js server).
+---
+## Notes
+- **Bookmarks are stored client-side** in `localStorage`. They do not sync across devices or browsers. A future enhancement could integrate a database-backed user authentication system.
+- **The OMDb API free tier** is limited to 1,000 requests per day. Monitor usage if deploying publicly.
+- **Type definitions** (`moviesData`, `MovieDetails`, `OmdbMovieData`) should be defined in a shared `types/` directory for better maintainability.
