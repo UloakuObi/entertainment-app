@@ -1,8 +1,5 @@
 "use client"
 
-export const dynamic = 'force-dynamic';
-// export const revalidate = 0;
-
 //import movies from "@/data1.json"
 import { useState, useEffect } from "react"
 import Navbar from "../_components/Navbar"
@@ -12,14 +9,11 @@ import { MouseEvent } from "react";
 
 export default function BookmarksPage() {
 
-    const [bookmarks, setBookmarks] = useBookmarks();
+    const [bookmarks, setBookmarks, isLoaded] = useBookmarks();
     //const [moviesData, setMoviesData] = useState(movies["movies"]);
     const [moviesData, setMoviesData] = useState<moviesData[]>([]);
-    const [hasMounted, setHasMounted] = useState(false);
 
     useEffect(() => {
-        setHasMounted(true);
-
         //Lazy load JSON ONLY on client
         import("@/data1.json").then((data) => {
             setMoviesData(data.movies);
@@ -27,14 +21,13 @@ export default function BookmarksPage() {
     }, []);
 
     // This prevents the server from ever trying to read 'bookmarks'
-    if (!hasMounted) {
+    if (!isLoaded) {
         return <div className="m-4">Loading bookmarks...</div>; 
     }
 
     const toggleBookmark = (e:MouseEvent<HTMLButtonElement | HTMLDivElement>, movie: moviesData) => {
           e.stopPropagation()
-          console.log("What is this movie object?", movie);
-          console.log("Toggle clicked for:", movie.title); // Is this appearing?
+          
           setBookmarks(prev => {
               const exists = prev.find(m => m.id === movie.id)
     
