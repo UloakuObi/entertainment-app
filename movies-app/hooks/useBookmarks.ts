@@ -11,19 +11,11 @@ export default function useBookmarks() {
         
 });
 
-    const [isLoaded, setIsLoaded] = useState(false)
-
-    useEffect(() => {
-        setIsLoaded(true)
-      
-    }, []);
-
     // Updates localStorage when ids actually changes
     useEffect(() => {
-        if (!isLoaded) return;
 
         localStorage.setItem("bookmarked-movies", JSON.stringify(movies));
-    }, [movies, isLoaded]);
+    }, [movies]);
 
-    return [movies, setMovies, isLoaded] as const;
+    return [movies, setMovies] as const;
 }

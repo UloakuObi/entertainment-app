@@ -1,6 +1,6 @@
 "use client"
 
-//import movies from "@/data1.json"
+import movies from "@/data1.json"
 import { useState, useEffect } from "react"
 import Navbar from "../_components/Navbar"
 import MovieCard from "../_components/MovieCard"
@@ -9,25 +9,20 @@ import { MouseEvent } from "react";
 
 export default function BookmarksPage() {
 
-    const [bookmarks, setBookmarks, isLoaded] = useBookmarks();
-    //const [moviesData, setMoviesData] = useState(movies["movies"]);
-    const [moviesData, setMoviesData] = useState<moviesData[]>([]);
+    const [bookmarks, setBookmarks] = useBookmarks();
+    const [moviesData, setMoviesData] = useState(movies["movies"]);
+    //const [moviesData, setMoviesData] = useState<moviesData[]>([]);
 
-    useEffect(() => {
-        //Lazy load JSON ONLY on client
-        import("@/data1.json").then((data) => {
-            setMoviesData(data.movies);
-        });
-    }, []);
-
-    // This prevents the server from ever trying to read 'bookmarks'
-    if (!isLoaded) {
-        return <div className="m-4">Loading bookmarks...</div>; 
-    }
+    // useEffect(() => {
+    //     //Lazy load JSON ONLY on client
+    //     import("@/data1.json").then((data) => {
+    //         setMoviesData(data.movies);
+    //     });
+    // }, []);
 
     const toggleBookmark = (e:MouseEvent<HTMLButtonElement | HTMLDivElement>, movie: moviesData) => {
           e.stopPropagation()
-          
+
           setBookmarks(prev => {
               const exists = prev.find(m => m.id === movie.id)
     
