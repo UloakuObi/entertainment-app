@@ -7,8 +7,6 @@ This is a **frontend web application** for browsing, searching, and bookmarking 
 
 Users can browse a curated collection of movies, search for any movie via the OMDb API, view detailed movie information in a modal overlay, and save their favorites to a persistent bookmarks list using `localStorage`.
 
-## Project Type
-**Frontend Web Application** — Client-rendered Next.js app with server-side API routes acting as a proxy to the OMDb external API.
 ---
 ## What the App Does
 - **Browse Movies** — View a curated catalog of movies organized into "Trending" and "Recommended" sections.
@@ -135,7 +133,7 @@ npm run start
 npm run lint
 ```
 ---
-## 🌐 Deployment
+## Deployment
 This app is optimized for deployment on **[Vercel](https://vercel.com/)**:
 1. Push your repository to GitHub/GitLab/Bitbucket.
 2. Import the project into Vercel.
